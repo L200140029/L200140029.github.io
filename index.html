@@ -8,9 +8,12 @@
  
 	<!-- CSS Untuk mengatur ukuran Peta -->
 	<style type="text/css">
+		body{
+			font-family: Comic Sans MS;
+		}
 		#mapDiv { 
 			width: 1350px; 
-			height: 550px;
+			height: 500px;
 		}
 	</style>
  
@@ -30,7 +33,6 @@
 	// proses membuat peta dan meletakannya pada elemen div
 	map = new google.maps.Map(mapElement, mapOptions); 
 	}
-
 	// menampilkan peta, pada saat dokumen html di // LOAD dalam screen browser
 	// panggil fungsi initMap() pada saat dokumen di load dalam screen
 	google.maps.event.addDomListener(window, 'load', initMap); 
@@ -62,19 +64,18 @@
 		});
 	}
 	</script>
-	
-	
-
-
 </head>
 
 <body>
+	<center><h2>~ SISTEM INFORMASI GEOGRAFIS - GEOLOCATION ~</h2></center>
 	<!-- lokasi untuk menampilkan peta -->
+	<center>
 	<input id="btnRoad" type="button" value="RoadMap">
     <input id="btnSat" type="button" value="Satellite">
 	<input id="btnHyb" type="button" value="Hybrid">
     <input id="btnTer" type="button" value="Terrain">
-	<br/><br/>
+	</center>
+	<br/>
 	<div id="mapDiv"></div>
 	
 	<script>
@@ -95,7 +96,5 @@
 		map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
 	});
     </script>
-
-
 </body>
 </html>
