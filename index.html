@@ -33,6 +33,7 @@
 	// proses membuat peta dan meletakannya pada elemen div
 	map = new google.maps.Map(mapElement, mapOptions); 
 	}
+
 	// menampilkan peta, pada saat dokumen html di // LOAD dalam screen browser
 	// panggil fungsi initMap() pada saat dokumen di load dalam screen
 	google.maps.event.addDomListener(window, 'load', initMap); 
@@ -64,6 +65,10 @@
 		});
 	}
 	</script>
+	
+	
+
+
 </head>
 
 <body>
@@ -96,5 +101,7 @@
 		map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
 	});
     </script>
+
+
 </body>
 </html>
