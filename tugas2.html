@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Sistem Informasi Geografis</title>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="css.css">
+
+<style type="text/css">
+	body{
+		margin-top:100px;
+		font-family: Comic Sans MS;
+	}
+	.glyphicon { margin-right:10px; }
+	.panel-body { padding:0px; }
+	.panel-body table tr td { padding-left: 15px }
+	.panel-body .table {margin-bottom: 0px; }
+	a:link {text-decoration: none}
+	a:visited {text-decoration: none}
+	a:active {text-decoration: none}
+	h1{font-family: Comic Sans MS;}
+	 #pages {
+	   padding:8px 16px;
+	   border:1px solid #ccc;
+	   color:#333;
+	   font-weight:bold;
+	  }
+</style>
+
+
+	<SCRIPT src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZAA8SUunr3BYp3RHH_Q_ZGsSHuwj8epY"></SCRIPT>
+	<script type="Text/Javascript" src="geolocation.js"></script>
+ 
+	<!-- CSS Untuk mengatur ukuran Peta -->
+	<style type="text/css">
+		body{
+			font-family: Comic Sans MS;
+		}
+		#mapDiv { 
+			width: 785px; 
+			height: 300px;
+		}
+	</style>
+ 
+	<!-- membuat script untuk menampilkan peta -->
+	<SCRIPT>
+	//variabel GLOBAL
+	var  map; //langsung di eksekusi oleh browser  
+	function initMap() {
+		//dieksekusi jika nama fungsi di panggil
+		// mengatur opsi map 
+		var mapOptions = {
+		//lokasi awal yang akan di tampilkan di tengah layar
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		};
+	// variabel utk mengontrol elemen div
+	var mapElement = document.getElementById('mapDiv');
+	// proses membuat peta dan meletakannya pada elemen div
+	map = new google.maps.Map(mapElement, mapOptions); 
+	}
+	// menampilkan peta, pada saat dokumen html di // LOAD dalam screen browser
+	// panggil fungsi initMap() pada saat dokumen di load dalam screen
+	google.maps.event.addDomListener(window, 'load', initMap); 
+	</SCRIPT>
+	
+	<script>
+	if (navigator.geolocation) {
+	//minta ijin kepada user, jika diijinkan 
+	//navigator.geolocation = True
+	 
+	//membaca posisi/lokasi client (browser) saat ini
+	navigator.geolocation.getCurrentPosition(
+		// position adalah data lokasi hasil pembacaan 
+		// berupa lokasi dalam json
+		function(position) {
+			console.log(position);   //menulis di konsole
+			var lat = position.coords.latitude
+			var lng = position.coords.longitude;
+	 
+		// devCenter adalah data lokasi dengan format 
+		// google.maps
+		var devCenter =  new google.maps.LatLng(lat, lng);
+		// mengatur lokasi PUSAT peta (map) 
+		map.setCenter(devCenter);
+		//mengatur Level ZOOM (18)
+		map.setZoom(18);
+										
+		console.log(latitude + " -- " + longitude);
+		});
+	}
+	</script>
+
+
+
+
+</head>
+<body>
+	<div class="row">
+    <div class="container">
+      <div class="col-md-14">
+		<nav class = "navbar navbar-default navbar-fixed-top" role = "navigation">
+	   
+	   <div class = "navbar-header">
+	      <a class = "navbar-brand" href = "#"><h4><label>Sistem Informasi Geografis 2017</label></h4></a>
+	   </div>
+	   
+	   <div>
+			
+	      <p class = "navbar-text navbar-right">
+				<a class = "navbar-brand" href = "#"><label>L200140029 | Aziz Abdul Rahman</label></a>
+	       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+	      
+	   </div>
+	   </nav>
+	</div>
+
+	<div class="row">
+		<div class="container">
+			<div class="col-md-3">
+				<div class="panel-group">
+					<div class="panel panel-default">
+				    	<div class="panel-heading">
+                        	<a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">
+							<h4 class="panel-title">
+                            	<img src="open-folder-black-interface-symbol.png" height="20" width="20" />&nbsp;
+                              	TUGAS
+                        	</h4>
+							</a>
+                    	</div>
+				    	<div id="collapseSeven" class="panel-collapse collapse">
+				      		<ul class="list-group">
+				        		<li class="list-group-item">
+				        			<a data-toggle="#" data-parent="#" href="tugas1.html">
+                        			<h4 class="panel-title">
+                            			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="242961.png" height="20" width="20" />&nbsp;&nbsp;TUGAS 1
+                        			</h4>
+									</a>
+				        		</li>
+				        		<li class="list-group-item">
+				        			<a data-toggle="#" data-parent="#" href="tugas2.html">
+                        			<h4 class="panel-title">
+                            			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="242963.png" height="20" width="20" />&nbsp;&nbsp;TUGAS 2
+                        			</h4>
+									</a>
+				        		</li>
+				        		<li class="list-group-item">
+				        			<a data-toggle="#" data-parent="#" href="tugas3.html">
+                        			<h4 class="panel-title">
+                            			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="242964.png" height="20" width="20" />&nbsp;&nbsp;TUGAS 3
+                        			</h4>
+									</a>
+				        		</li>
+				      		</ul>
+				    	</div>
+					</div>
+
+					<div class="panel panel-default">
+					    <div class="panel-heading">
+	                        <a href="about.html">
+								<h4 class="panel-title">
+	                            	<img src="user-male-silhouette.png" height="20" width="20" />&nbsp;
+	                            	ABOUT ME
+	                        	</h4>
+							</a>
+	                    </div>
+					</div>
+
+					<div class="panel panel-default">
+					    <div class="panel-heading">
+	                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseNine">
+								<h4 class="panel-title">
+	                            	<img src="phone-auricular-symbol-variant.png" height="20" width="20" />&nbsp;
+	                            	CONTACT
+	                        	</h4>
+							</a>
+	                    </div>
+
+	                    <div id="collapseNine" class="panel-collapse collapse">
+				      		<ul class="list-group">
+				        		<li class="list-group-item">
+				        			<a data-toggle="#" data-parent="#" target="_BLANK" href="http://azizguava24.blogspot.co.id/">
+                        			<h4 class="panel-title">
+                            			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="blogger.png" height="20" width="20" />&nbsp;&nbsp;BLOGGER
+                        			</h4>
+									</a>
+				        		</li>
+				        		<li class="list-group-item">
+				        			<a data-toggle="#" data-parent="#" target="_BLANK" href="https://github.com/L200140029">
+                        			<h4 class="panel-title">
+                            			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="github-logo-1.png" height="20" width="20" />&nbsp;&nbsp;GITHUB
+                        			</h4>
+									</a>
+				        		</li>
+				      		</ul>
+				    	</div>
+			</div>				
+    	</div>
+    	</div>
+
+
+    	<div class="col-md-9">
+    		<div class="panel-body page-contents">
+
+    		<div class="well">
+				<center><h2>~ SISTEM INFORMASI GEOGRAFIS - GEOLOCATION ~</h2></center>
+	<!-- lokasi untuk menampilkan peta -->
+	<center>
+	<input id="btnRoad" type="button" value="RoadMap">
+    <input id="btnSat" type="button" value="Satellite">
+	<input id="btnHyb" type="button" value="Hybrid">
+    <input id="btnTer" type="button" value="Terrain">
+	</center>
+	<br/>
+	<div id="mapDiv"></div>
+	
+	<script>
+	//click adalah NAMA EVENT
+	document.getElementById('btnRoad').addEventListener('click', function(){
+		map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+		// map adalah variabel global terdapat dalam script sebelumnya
+		// .setMapTypeId   : perintah untuk mengubah tipe peta
+		//google.maps.MapTypeId.ROADMAP  : tipe peta ROADMAP 
+	});
+	document.getElementById('btnSat').addEventListener('click', function(){
+		map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+	});
+	document.getElementById('btnHyb').addEventListener('click', function(){
+		map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+	});
+	document.getElementById('btnTer').addEventListener('click', function(){
+		map.setMapTypeId(google.maps.MapTypeId.TERRAIN);
+	});
+    </script>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+</body>
+</html>
